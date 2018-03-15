@@ -1,0 +1,35 @@
+{
+  "name": "apollo-react",
+  "version": "0.0.1",
+  "description": "A React app that consumes data from a GraphQL server, provided and consumed by Apollo",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jamesseanwright/apollo-react.git"
+  },
+  "keywords": [
+    "react",
+    "graphql",
+    "apollo"
+  ],
+  "author": "James Wright <james@jamesswright.co.uk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesseanwright/apollo-react/issues"
+  },
+  "homepage": "https://github.com/jamesseanwright/apollo-react#readme",
+  "devDependencies": {
+    "@babel/cli": "7.0.0-beta.41",
+    "@babel/core": "^7.0.0-beta.41",
+    "@babel/preset-env": "7.0.0-beta.41",
+    "@babel/preset-react": "7.0.0-beta.41"
+  },
+  "dependencies": {
+    "react": "16.2.0",
+    "react-dom": "16.2.0"
+  }
+}
