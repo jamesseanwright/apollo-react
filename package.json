@@ -1,7 +1,7 @@
 {
   "name": "apollo-react",
   "version": "0.0.1",
-  "description": "A React app that consumes data from a GraphQL server, provided and consumed by Apollo",
+  "description": "A React app that consumes data from a GraphQL server, provided by Apollo",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist",
