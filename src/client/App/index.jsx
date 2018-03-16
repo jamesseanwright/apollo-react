@@ -8,7 +8,7 @@ const query = gql`
     query EventsListQuery {
         events {
             id
-            name
+            summary
         }
     }
 `;
