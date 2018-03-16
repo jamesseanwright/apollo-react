@@ -1,25 +1,29 @@
+import gql from 'graphql-tag';
 import React from 'react';
+import { ApolloProvider, graphql } from 'react-apollo';
 
-import {
-    ApolloClient,
-    gql,
-    graphql,
-    ApolloProvider,
-} from 'react-apollo';
+import EventsList from '../Events/EventsList.jsx';
 
-const client = new ApolloClient();
+const query = gql`
+    query EventsListQuery {
+        events {
+            id
+            name
+        }
+    }
+`;
 
-const renderers = [
+const renders = [
     [data => data.loading, () => <p>Loading</p>],
     [data => data.error, ({ error }) => <p>{error.message}</p>],
     [() => true, ({ events }) => <p>Render events here!</p>],
 ];
 
 const renderByData = data => {
-    const [_, renderer] = renderers.find(([predicate]) => predicate(data));
-    return renderer;
+    const [_, renderer] = renders.find(([predicate]) => predicate(data));
+    return renderer(data);
 };
 
-const App = () => ({ data }) => renderByData(data);
+const App = ({ data }) => renderByData(data);
 
-export default App;
+export default graphql(query)(App);
