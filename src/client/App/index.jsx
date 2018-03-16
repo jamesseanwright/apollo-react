@@ -12,14 +12,14 @@ const query = gql`
     }
 `;
 
-const renders = [
+const renderFuncs = [
     [data => data.loading, () => <p>Loading</p>],
     [data => data.error, ({ error }) => <p>{error.message}</p>],
     [() => true, ({ events }) => <EventsList events={events} />],
 ];
 
 const renderByData = data => {
-    const [_, renderer] = renders.find(([predicate]) => predicate(data));
+    const [_, renderer] = renderFuncs.find(([predicate]) => predicate(data));
     return renderer(data);
 };
 
